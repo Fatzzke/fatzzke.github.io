@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <!-- when using the mode "code", it's important to specify charset utf-8 -->
+    <meta charset="utf-8">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <script type="module">
+        import { JSONEditor } from 'https://unpkg.com/vanilla-jsoneditor/standalone.js'
+        var content = {
+            text: undefined,
+            json: {
+                greeting: 'Hello World'
+            }
+        }
+        window.editor = new JSONEditor({
+            target: document.getElementById('jsoneditor'),
+            props: {
+                content,
+                onChange: (updatedContent, previousContent, { contentErrors, patchResult }) => {
+                    console.log('onChange', { updatedContent, previousContent, contentErrors, patchResult })
+                    content = updatedContent
+                }
+            }
+        })
+
+    </script>
+    <div style="height: calc(100vh - 24px);;">
+        <input id="file" type="file" />
+
+        <button onclick="importFile(editor)">import</button>
+        <button onclick="exportFile(editor)">encrypt</button>
+        <a download="saveFile" id="download" href="" style="display: none;"></a>
+        <div id="jsoneditor" style="width: 100%; height: calc(100% - 24px);"></div>
+    </div>
+
+
+</body>
+
+</html>
