@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="800" style="border:1px solid #000000;"></canvas>
+    <script src="brain.js"></script> 
+    <div>
+    <button type="button" onclick="startButton()">start</button> 
+    <button type="button" onclick="backToStart()">backToStart</button> 
+    <button type="button" onclick="resetButton()">FULL RESET</button> 
+    <button type="button" onclick="toggleStack(0)">player1Stack</button> 
+    <button type="button" onclick="toggleStack(1)">player2Stack</button> 
+    <button type="button" onclick="toggleStack(2)">player3Stack</button> 
+    <button type="button" onclick="toggleStack(3)">player4Stack</button> 
+</div>
+<div>click to select (purple). click to drop (green). Choose angle and click</div>
+<div>if player is red he ded. Stack only visual not implemented</div>
+<h1 id="status"></h1>
+</body>
+</html>
